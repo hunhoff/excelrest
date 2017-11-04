@@ -1,0 +1,58 @@
+<!-- Sample of configuration file containing all configuration options -->
+<configuration>
+	<execution>
+		<testcase run="TRUE|FALSE"> <!-- Sets if the test cases should be executed or not -->
+			<input>xls_input_file</input> <!-- Sets the location were the test cases are defined -->
+			<output>xls_output_file</output> <!-- Sets the location were the results should be stored -->
+			<rallydev>
+				<updateTestCase run="TRUE|FALSE"></updateTestCase> <!-- Sets if the test cases should be updated on RallyDev reflecting the test cases defined in the input spreadsheet or not -->
+				<registerTestResult run="TRUE|FALSE"></registerTestResult> <!-- Sets if the results should be registered on RallyDev for each test case or not -->
+			</rallydev>
+			<postmail run="TRUE|FALSE"></postmail> <!-- Sets if an email with the results should be sent or not -->
+			<proxy set="TRUE|FALSE"></proxy> <!-- Sets if the proxy should be used or not -->
+		</testcase>
+
+		<report run="TRUE|FALSE"> <!-- Sets if the report should be executed or not -->
+			<type>rallydev_type</type> <!-- Sets the type that should be considered in the query (i.e.: testcase, defect, iterations) -->
+			<output>xls_output_file</output> <!-- Sets the location were the results should be stored-->
+			<field-list>
+				<field>rallydev_field_to_add</field> <!-- Sets the fields that should be considered in the query -->
+			</field-list>
+			<postmail run="TRUE|FALSE"></postmail> <!-- Sets if an email with the report should be sent or not -->
+		</report>
+	</execution>
+	
+	<queue> <!-- Sets the queue configuration used to test the rabbitMQ interface (does not work with proxy ) -->
+		<username>guest</username> <!-- Default is 'guest' -->
+		<password>guest</password> <!-- Default is 'guest' -->
+		<vhost>/</vhost> <!--  Default is '/' -->
+		<host>queue_url</host> <!-- Service queue url -->
+	</queue>
+
+	<rest> <!-- Sets the configuration used to test the RESTful web interface -->
+		<url>service_url</url> <!-- RESTful web interface url -->
+	</rest>
+
+	<rallydev> <!-- Sets the configuration used to access the RallyDev RESTful web interface -->
+		<url>https://rally1.rallydev.com/</url> <!-- Sets the url used to acccess the RallyDev RESTful web interface -->
+		<username>username</username> <!-- Sets the RallyDev username that will be used (the user should have write permissions in the project) --> 
+		<password>user_password</password> <!-- Sets the RallyDev password that will be used -->
+		<project>project_name</project> <!-- Sets the RallyDev project that should be used -->
+		<proxy set="TRUE|FALSE"></proxy> <!-- Sets if the proxy should be used or not -->
+	</rallydev>
+
+	<proxy> <!-- Sets the proxy configuration -->
+		<host>web-proxy</host>
+		<port>8088</port>
+	</proxy>
+
+	<email> <!-- Sets the email configuration (required only if postmail TRUE) -->
+		<smtpName>16.234.33.148</smtpName>
+		<msgTxt>Message body</msgTxt>
+		<subjectTxt>Message subject</subjectTxt>
+		<fromAddress>sender email address</fromAddress>
+		<toAddress-list>
+			<toAddress>recipient email address</toAddress>
+		</toAddress-list>
+	</email>
+</configuration>

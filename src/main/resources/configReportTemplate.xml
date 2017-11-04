@@ -1,0 +1,36 @@
+<!-- Sample of configuration file only for reporting, without email and testing configuration -->
+<configuration>
+	<execution>
+		<report run="TRUE">
+			<type>rallydev_type</type> <!--testcase | projects | tasks | iterations | users -->
+			<output>xls_output_file</output>
+			<field-list>
+			
+			<!-- defect type fields: ObjectID, FormattedID, Name, CreationDate, ClosedDate, Priority, Severity, State, Blocked, Resolution, Environment, FoundInBuild, 
+			VerifiedInBuild, FixedInBuild, Iteration, Release, Owner, SubmittedBy, Description, LastUpdateDate, AcceptedDate, InProgressDate, ScheduleState, 
+			TargetBuild, TestCase, TestCaseResult, TestCaseStatus, Component, Deliverable -->
+			 
+			 <!-- testcase type fields: ObjectID, FormattedID, Name, Description, Objective, Method, Type, ValidationInput, ValidationExpectedResult, Owner, CreationDate, LastUpdateDate, 
+			 Notes, LastBuild, LastRun, LastVerdict, Package, PreConditions, PostConditions -->
+			 
+			 <!-- iterations type fields: Name, CreationDate, StartDate, EndDate, State, Subscription, Workspace, Resources, Project, Theme -->
+			 	 
+				<field>rallydev_field_to_add</field> <!--available RallyDev fields according the type specified -->
+			</field-list>
+			<postmail run="FALSE"></postmail>
+		</report>
+	</execution>
+	
+	<rallydev> <!-- Sets the configuration used to access the RallyDev RESTful web interface -->
+		<url>https://rally1.rallydev.com/</url> <!-- Sets the url used to acccess the RallyDev RESTful web interface -->
+		<username>username</username> <!-- Sets the RallyDev username that will be used (the user should have write permissions in the project) --> 
+		<password>user_password</password> <!-- Sets the RallyDev password that will be used -->
+		<project>project_name</project> <!-- Sets the RallyDev project that should be used -->
+		<proxy set="TRUE|FALSE"></proxy> <!-- Sets if the proxy should be used or not -->
+	</rallydev>
+
+	<proxy> <!-- Sets the proxy configuration -->
+		<host>web-proxy</host>
+		<port>8088</port>
+	</proxy>
+</configuration>

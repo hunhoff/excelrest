@@ -1,0 +1,24 @@
+<!-- Sample of configuration file only for testing, without email, reporting and RallyDev configuration -->
+<configuration>
+	<execution>
+		<testcase run="TRUE"> <!-- Sets if the test cases should be executed or not -->
+			<input>xls_input_file</input> <!-- Sets the location were the test cases are defined -->
+			<output>xls_output_file</output> <!-- Sets the location were the results should be stored -->
+			<rallydev>
+				<updateTestCase run="FALSE"></updateTestCase> <!-- Sets if the test cases should be updated on RallyDev reflecting the test cases defined in the input spreadsheet or not -->
+				<registerTestResult run="FALSE"></registerTestResult> <!-- Sets if the results should be registered on RallyDev for each test case or not -->
+			</rallydev>
+			<postmail run="FALSE"></postmail> <!-- Sets if an email with the results should be sent or not -->
+			<proxy set="TRUE|FALSE"></proxy> <!-- Sets if the proxy should be used or not -->
+		</testcase>
+	</execution>
+	
+	<rest> <!-- Sets the configuration used to test the RESTful web interface -->
+		<url>service_url</url> <!-- RESTful web interface url -->
+	</rest>
+
+	<proxy> <!-- Sets the proxy configuration -->
+		<host>web-proxy</host>
+		<port>8088</port>
+	</proxy>
+</configuration>

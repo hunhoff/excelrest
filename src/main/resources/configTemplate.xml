@@ -1,0 +1,64 @@
+<configuration>
+	<execution>
+		<testcase run="TRUE|FALSE">
+			<input>xls_input_file</input>
+			<output>xls_output_file</output>
+			<rallydev>
+				<updateTestCase run="TRUE|FALSE"></updateTestCase>
+				<registerTestResult run="TRUE|FALSE"></registerTestResult>
+			</rallydev>
+			<postmail run="TRUE|FALSE"></postmail>
+		</testcase>
+
+		<defectreport run="TRUE|FALSE">
+			<output>xls_output_file</output>
+			<state-list>
+				<state>Open</state>
+				<state>Fixed</state>
+				<state>Submitted</state>
+				<state>Closed</state>
+			</state-list>
+			<postmail run="TRUE|FALSE"></postmail>
+		</defectreport>
+	</execution>
+
+	<queue>
+		<username>guest</username>
+		<password>guest</password>
+		<vhost>/</vhost>
+		<host>16.127.74.205</host>
+	</queue>
+
+	<rest>
+	</rest>
+
+	<rallydev>
+		<url>https://rally1.rallydev.com/</url>
+		<username>alessandro.hunhoff@hp.com</username>
+		<password>passwordtest01!</password>
+		<project>Tillamook</project>
+	</rallydev>
+
+	<proxy>
+		<host>web-proxy</host>
+		<port>8088</port>
+	</proxy>
+
+	<email>
+		<smtpName>16.127.96.101</smtpName>
+		<smtpName>16.234.33.148</smtpName>
+		<msgTxt>
+			Please check the report in the attached spreadsheet.
+
+			Regards,
+			Alessandro Hunhoff
+			+55 51 21213659
+			alessandro.hunhoff@hp.com
+		</msgTxt>
+		<subjectTxt>Automated Report - Tillamook</subjectTxt>
+		<fromAddress>alessandro.hunhoff@hp.com</fromAddress>
+		<toAddress-list>
+			<toAddress>alessandro.hunhoff@hp.com</toAddress>
+		</toAddress-list>
+	</email>
+</configuration>
