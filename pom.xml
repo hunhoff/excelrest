@@ -13,21 +13,9 @@
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<encoding>UTF-8</encoding>
 		<scala.version>2.9.1</scala.version>
-		<company.repo>http://brrndprocyon.br.rd.hpicorp.net:8080/nexus/content/groups/public/</company.repo>
-		<project.repo>http://brrndprocyon.br.rd.hpicorp.net:8080/nexus/content/groups/centraltillamook/</project.repo>
 	</properties>
 
 	<repositories>
-		<repository>
-			<id>companyrepo</id>
-			<name>HP RnD Brazil</name>
-			<url>${company.repo}</url>
-		</repository>
-		<repository>
-			<id>projectrepo</id>
-			<name>Tillamook Repo</name>
-			<url>${project.repo}</url>
-		</repository>
 		<repository>
 			<id>sonatype-oss</id>
 			<name>SonaType OSS</name>
