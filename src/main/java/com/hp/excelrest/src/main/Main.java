@@ -1076,7 +1076,8 @@ public class Main {
 		LinkedList<String> tcsToWrite = new LinkedList<String>();
 
 		for(int row=0; row<tcs.size(); row++) {
-			if(!tcs.get(row).isResult_success()) {
+			if((!tcs.get(row).isResult_success())&(tcs.get(row).isExecutable())) {
+				
 				if(!tcsToWrite.contains(tcs.get(row).getId())) tcsToWrite.add(tcs.get(row).getId());
 
 				if(tcs.get(row).getVars()!=null)
